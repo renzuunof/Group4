@@ -30,7 +30,7 @@
             </thead>
             <tbody>
                 @foreach($posts as $post)
-<<<<<<< HEAD
+
                     <tr>
                         <td>{{ $post->id }}</td>
                         <td>{{ $post->first_name }}</td>
@@ -51,7 +51,7 @@
                             </form>
                         </td>
                     </tr>
-=======
+
                 <tr>
                     <td>{{ $post->id }}</td>
                     <td>{{ $post->first_name }}</td>
@@ -62,9 +62,10 @@
                     <td>{{ $post->created_at->format('Y-m-d H:i:s') }}</td>
                     <td>
                         <a href="{{ route('home.edit', $post->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="{{ route('home.show', $post->id) }}" class="btn btn-info btn-sm">View Records</a>
                     </td>
                 </tr>
->>>>>>> 9e6cf7f4d097b622b73ade1cd9f32231789ad283
+
                 @endforeach
             </tbody>
         </table>

@@ -33,7 +33,7 @@ class HomeController extends Controller
         return redirect()->route('home.index')->with('success', 'Record created successfully!');
     }
 
-<<<<<<< HEAD
+
     public function destroy($id)
     {
         $post = Home::findOrFail($id);
@@ -43,9 +43,11 @@ class HomeController extends Controller
                          ->with('success', 'Record deleted successfully!');
     }
 
-    // Other CRUD methods (show, edit, update) are not implemented as per the task
-=======
-    // Other CRUD methods (show, edit, update, delete) are not implemented as per the task
+public function show($id)
+    {
+        $post = Home::findOrFail($id);
+        return view('home.show', compact('post'));
+    }
 
   public function edit($id)
     {
@@ -68,12 +70,4 @@ class HomeController extends Controller
 
         return redirect()->route('home.index')->with('success', 'Record updated successfully!');
     }
-
-
-
-
-
-
-
->>>>>>> 9e6cf7f4d097b622b73ade1cd9f32231789ad283
 }

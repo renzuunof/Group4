@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        $users = User::all(); // get all records
+        return view('home.index', compact('users')); 
+    }
     public function destroy($id)
     {
         $user = User::findOrFail($id);
