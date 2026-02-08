@@ -11,6 +11,22 @@
 <body>
     <div class="container mt-5">
         <h1>Group4 Records</h1>
+        <form method="GET" action="{{ route('home.index') }}" class="row g-2 mb-3">
+            <div class="col-md-4">
+                <input
+                    type="text"
+                    name="search"
+                    class="form-control"
+                    placeholder="Search name, contact, status..."
+                    value="{{ request('search') }}"
+                >
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-secondary">Search</button>
+                <a href="{{ route('home.index') }}" class="btn btn-outline-secondary">Reset</a>
+            </div>
+        </form>
+
         <a href="{{ route('home.create') }}" class="btn btn-primary mb-3">Create New Record</a>
         @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>

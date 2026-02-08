@@ -7,9 +7,18 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Home::all();
+        $search = $request->search;
+
+        $posts = Home::when($search, function ($query, $search) {
+            $query->where('first_name', 'like', "%{$search}%")
+                ->orWhere('last_name', 'like', "%{$search}%")
+                ->orWhere('middle_name', 'like', "%{$search}%")
+                ->orWhere('contact_info', 'like', "%{$search}%")
+                ->orWhere('marital_status', 'like', "%{$search}%");
+        })->get();
+
         return view('home.index', compact('posts'));
     }
 
