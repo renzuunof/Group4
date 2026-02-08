@@ -45,26 +45,16 @@
                             @csrf
                             @method('DELETE')
 
+                            <a href="{{ route('home.edit', $post->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="{{ route('home.show', $post->id) }}" class="btn btn-info btn-sm">View Records</a>
+                            
                              <button type="submit" class="btn btn-danger">
                              Delete
                             </button>
+                            
                             </form>
                         </td>
-                    </tr>
-
-                <tr>
-                    <td>{{ $post->id }}</td>
-                    <td>{{ $post->first_name }}</td>
-                    <td>{{ $post->last_name }}</td>
-                    <td>{{ $post->middle_name }}</td>
-                    <td>{{ $post->contact_info }}</td>
-                    <td>{{ $post->marital_status }}</td>
-                    <td>{{ $post->created_at->format('Y-m-d H:i:s') }}</td>
-                    <td>
-                        <a href="{{ route('home.edit', $post->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                        <a href="{{ route('home.show', $post->id) }}" class="btn btn-info btn-sm">View Records</a>
-                    </td>
-                </tr>
+                
 
                 @endforeach
             </tbody>

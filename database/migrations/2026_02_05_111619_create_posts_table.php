@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('middle_name')->nullable();
             $table->string('contact_info');
-            $table->enum('marital_status', ['single', 'married']);
+            $table->enum('marital_status', ['Single', 'Married']);
             $table->timestamps();
         });
     }
