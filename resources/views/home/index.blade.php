@@ -40,7 +40,6 @@
                     <th>Middle Name</th>
                     <th>Contact Info</th>
                     <th>Marital Status</th>
-                    <th>Created At</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -54,7 +53,6 @@
                         <td>{{ $post->middle_name }}</td>
                         <td>{{ $post->contact_info }}</td>
                         <td>{{ $post->marital_status }}</td>
-                        <td>{{ $post->created_at->format('Y-m-d H:i:s') }}</td>
                         <td>
                             <form action="{{ route('home.destroy', $post->id) }}" method="POST"
                                  onsubmit="return confirm('Are you sure you want to delete this?');">
